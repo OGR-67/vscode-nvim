@@ -39,6 +39,10 @@ vim.cmd("nmap <leader>c :e ~/.config/nvim/init.lua<cr>") -- open init.lua config
 vim.cmd("nmap <leader>s :w<cr>") -- better save file command
 vim.cmd("nmap <leader>xd <Cmd>lua require('vscode').action('clipboard-manager.history.clear')<CR>") -- clear clipboard history
 vim.cmd("nmap <leader>xh <Cmd>lua require('vscode').action('clipboard-manager.editor.pickAndPaste')<CR>") -- pick and paste from history
+vim.cmd("nmap <leader>w <Cmd>lua require('vscode').action('workbench.action.closeActiveEditor')<CR>") -- close tab
+vim.cmd("nmap <leader>z <Cmd>lua require('vscode').action('editor.toggleFold')<CR>") -- Toggle Fold
+
+vim.cmd("nmap gr <Cmd>lua require('vscode').action('workbench.action.previousEditor')<CR>") -- Previous Tab
 
 -- Avoid unfold on navigation
 vim.cmd("nmap j gj")
