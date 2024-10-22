@@ -41,6 +41,10 @@ vim.cmd("nmap <leader>xd <Cmd>lua require('vscode').action('clipboard-manager.hi
 vim.cmd("nmap <leader>xh <Cmd>lua require('vscode').action('clipboard-manager.editor.pickAndPaste')<CR>") -- pick and paste from history
 vim.cmd("nmap <leader>w <Cmd>lua require('vscode').action('workbench.action.closeActiveEditor')<CR>") -- close tab
 vim.cmd("nmap <leader>z <Cmd>lua require('vscode').action('editor.toggleFold')<CR>") -- Toggle Fold
+vim.cmd("nmap <leader>f <Cmd>lua require('vscode').action('editor.action.formatDocument')<CR>") -- Format Document
+vim.cmd("nmap <leader>np <Cmd>lua require('vscode').action('editor.action.marker.nextInFiles')<CR>") -- Go to Next Problem
+vim.cmd("nmap <leader>pp <Cmd>lua require('vscode').action('editor.action.marker.prevInFiles')<CR>") -- Go to Previous Problem
+vim.cmd("nmap <leader>sf <Cmd>lua require('vscode').action('workbench.action.findInFiles')<CR>") -- Search In Files
 
 vim.cmd("nmap gr <Cmd>lua require('vscode').action('workbench.action.previousEditor')<CR>") -- Previous Tab
 
