@@ -34,7 +34,7 @@ require("lazy").setup({
     },
     checker = {
         enabled = true
-    }
+    },
 })
 
 vim.cmd("nmap <leader>cc :e ~/.config/nvim/init.lua<cr>") -- open init.lua config file
@@ -64,8 +64,46 @@ vim.cmd("nmap <leader>ss <Cmd>lua require('vscode').action('workbench.action.got
 vim.cmd("nmap <leader>ff <Cmd>lua require('vscode').action('workbench.action.findInFiles')<CR>") -- Search In Files
 vim.cmd("nmap <leader>fr <Cmd>lua require('vscode').action('workbench.action.replaceInFiles')<CR>") -- Search In Files
 
+vim.cmd("nmap <leader>h <Cmd>lua require('vscode').action('editor.action.showHover')<CR>") -- Show hover
 vim.cmd("nmap <A-S-k> <Cmd>lua require('vscode').action('editor.action.showHover')<CR>") -- Show hover
+vim.cmd("nmap <C-S-k> <Cmd>lua require('vscode').action('editor.action.showHover')<CR>") -- Show hover
 vim.cmd("nmap  <Cmd>lua require('vscode').action('editor.action.showHover')<CR>") -- Show hover
+
+-- Splits
+vim.keymap.set("n", "<A-h>", function()
+  require('vscode').action('workbench.action.focusPreviousGroup') -- Focus groupe à gauche
+end, { noremap = true, silent = true })
+vim.keymap.set("n", "˙", function()
+  require('vscode').action('workbench.action.focusPreviousGroup') -- Focus groupe à gauche
+end, { noremap = true, silent = true })
+
+vim.keymap.set("n", "A-l>", function()
+  require('vscode').action('workbench.action.focusNextGroup') -- Focus groupe à droite
+end, { noremap = true, silent = true })
+vim.keymap.set("n", "¬", function()
+  require('vscode').action('workbench.action.focusNextGroup') -- Focus groupe à droite
+end, { noremap = true, silent = true })
+
+vim.keymap.set("n", "<A-j>", function()
+  require('vscode').action('workbench.action.focusBelowGroup') -- Focus groupe en bas
+end, { noremap = true, silent = true })
+vim.keymap.set("n", "∆", function()
+  require('vscode').action('workbench.action.focusBelowGroup') -- Focus groupe en bas
+end, { noremap = true, silent = true })
+
+vim.keymap.set("n", "<A-k>", function()
+  require('vscode').action('workbench.action.focusAboveGroup') -- Focus groupe en haut
+end, { noremap = true, silent = true })
+vim.keymap.set("n", "˚", function()
+  require('vscode').action('workbench.action.focusAboveGroup') -- Focus groupe en haut
+end, { noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>wv", function()
+  require('vscode').action('workbench.action.splitEditorRight') -- Creae vertical split
+end, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>wh", function()
+  require('vscode').action('workbench.action.splitEditorDown') -- Creae horizontal split
+end, { noremap = true, silent = true })
 
 -- Refactoring
 vim.cmd("nmap <leader>rn <Cmd>lua require('vscode').action('editor.action.rename')<CR>") -- Rename Symbol
@@ -114,7 +152,10 @@ vim.keymap.set({'n', 'v'}, 'B', '[b', {
 vim.keymap.set({'n', 'v'}, 'ge', ']b', {
     noremap = true,
     silent = true
-})
 
+  })
+
+vim.keymap.del("n", "<C-w>")
+  
 -- Pre-enregistrer la macro dans le registre m
 vim.cmd('let @m = "viwP"')
