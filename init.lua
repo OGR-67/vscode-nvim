@@ -99,10 +99,13 @@ vim.keymap.set("n", "˚", function()
 end, { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader>wv", function()
-  require('vscode').action('workbench.action.splitEditorRight') -- Creae vertical split
+  require('vscode').action('workbench.action.moveEditorToNextGroup') -- Create vertical split
+end, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>ww", function()
+  require('vscode').action('workbench.action.moveEditorToPreviousGroup') -- Create vertical split
 end, { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>wh", function()
-  require('vscode').action('workbench.action.splitEditorDown') -- Creae horizontal split
+  require('vscode').action('workbench.action.splitEditorToBelowGroup') -- Creae horizontal split
 end, { noremap = true, silent = true })
 
 -- Refactoring
