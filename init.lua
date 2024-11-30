@@ -70,32 +70,15 @@ vim.cmd("nmap <C-S-k> <Cmd>lua require('vscode').action('editor.action.showHover
 vim.cmd("nmap  <Cmd>lua require('vscode').action('editor.action.showHover')<CR>") -- Show hover
 
 -- Splits
-vim.keymap.set("n", "<A-h>", function()
-  require('vscode').action('workbench.action.focusPreviousGroup') -- Focus groupe à gauche
-end, { noremap = true, silent = true })
-vim.keymap.set("n", "˙", function()
-  require('vscode').action('workbench.action.focusPreviousGroup') -- Focus groupe à gauche
+vim.cmd("nmap <leader>we <Cmd>lua require('vscode').action('workbench.action.minimizeOtherEditors')<CR>"); -- Expand split mode
+vim.cmd("nmap <leader>wr <Cmd>lua require('vscode').action('workbench.action.evenEditorWidths')<CR>"); -- Reset split default size
+
+vim.keymap.set("n", "∆", function() -- Alt-J (right alt on windows)
+  require('vscode').action('workbench.action.focusPreviousGroup') -- Focus previous split
 end, { noremap = true, silent = true })
 
-vim.keymap.set("n", "A-l>", function()
-  require('vscode').action('workbench.action.focusNextGroup') -- Focus groupe à droite
-end, { noremap = true, silent = true })
-vim.keymap.set("n", "¬", function()
-  require('vscode').action('workbench.action.focusNextGroup') -- Focus groupe à droite
-end, { noremap = true, silent = true })
-
-vim.keymap.set("n", "<A-j>", function()
-  require('vscode').action('workbench.action.focusBelowGroup') -- Focus groupe en bas
-end, { noremap = true, silent = true })
-vim.keymap.set("n", "∆", function()
-  require('vscode').action('workbench.action.focusBelowGroup') -- Focus groupe en bas
-end, { noremap = true, silent = true })
-
-vim.keymap.set("n", "<A-k>", function()
-  require('vscode').action('workbench.action.focusAboveGroup') -- Focus groupe en haut
-end, { noremap = true, silent = true })
-vim.keymap.set("n", "˚", function()
-  require('vscode').action('workbench.action.focusAboveGroup') -- Focus groupe en haut
+vim.keymap.set("n", "˚", function() -- Alt-K (right alt on windows)
+  require('vscode').action('workbench.action.focusNextGroup') -- Focus next split
 end, { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader>wv", function()
