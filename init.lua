@@ -34,18 +34,19 @@ require("lazy").setup({
     },
     checker = {
         enabled = true
-    },
+    }
 })
 
 vim.cmd("nmap <leader>cc :e ~/.config/nvim/init.lua<cr>") -- open init.lua config file
 
 vim.cmd("nmap <leader><leader> <Cmd>lua require('vscode').action('editor.action.formatDocument')<CR>") -- Format Document
-vim.cmd("nmap <leader>s :w<cr>") -- better save file command
 
 -- Tabs
 vim.cmd("nmap <leader>ww <Cmd>lua require('vscode').action('workbench.action.closeActiveEditor')<CR>") -- close tab
 vim.cmd("nmap <leader>pp <Cmd>lua require('vscode').action('workbench.action.previousEditor')<CR>") -- Previous Tab
-vim.cmd("nmap <leader>nn <Cmd>lua require('vscode').action('workbench.action.nextEditor')<CR>") -- Previous Tab
+vim.cmd("nmap ˙  <Cmd>lua require('vscode').action('workbench.action.previousEditor')<CR>") -- Previous Tab
+vim.cmd("nmap >nn <Cmd>lua require('vscode').action('workbench.action.nextEditor')<CR>") -- next Tab
+vim.cmd("nmap ¬ <Cmd>lua require('vscode').action('workbench.action.nextEditor')<CR>") -- next Tab
 
 -- Fold
 vim.cmd("nmap <leader>zz <Cmd>lua require('vscode').action('editor.toggleFold')<CR>") -- Toggle Fold
@@ -74,22 +75,37 @@ vim.cmd("nmap <leader>we <Cmd>lua require('vscode').action('workbench.action.min
 vim.cmd("nmap <leader>wr <Cmd>lua require('vscode').action('workbench.action.evenEditorWidths')<CR>"); -- Reset split default size
 
 vim.keymap.set("n", "∆", function() -- Alt-J (right alt on windows)
-  require('vscode').action('workbench.action.focusPreviousGroup') -- Focus previous split
-end, { noremap = true, silent = true })
+    require('vscode').action('workbench.action.focusPreviousGroup') -- Focus previous split
+end, {
+    noremap = true,
+    silent = true
+})
 
 vim.keymap.set("n", "˚", function() -- Alt-K (right alt on windows)
-  require('vscode').action('workbench.action.focusNextGroup') -- Focus next split
-end, { noremap = true, silent = true })
+    require('vscode').action('workbench.action.focusNextGroup') -- Focus next split
+end, {
+    noremap = true,
+    silent = true
+})
 
 vim.keymap.set("n", "<leader>wv", function()
-  require('vscode').action('workbench.action.moveEditorToNextGroup') -- Create vertical split
-end, { noremap = true, silent = true })
+    require('vscode').action('workbench.action.moveEditorToNextGroup') -- Create vertical split
+end, {
+    noremap = true,
+    silent = true
+})
 vim.keymap.set("n", "<leader>ww", function()
-  require('vscode').action('workbench.action.moveEditorToPreviousGroup') -- Create vertical split
-end, { noremap = true, silent = true })
+    require('vscode').action('workbench.action.moveEditorToPreviousGroup') -- Create vertical split
+end, {
+    noremap = true,
+    silent = true
+})
 vim.keymap.set("n", "<leader>wh", function()
-  require('vscode').action('workbench.action.splitEditorToBelowGroup') -- Creae horizontal split
-end, { noremap = true, silent = true })
+    require('vscode').action('workbench.action.splitEditorToBelowGroup') -- Creae horizontal split
+end, {
+    noremap = true,
+    silent = true
+})
 
 -- Refactoring
 vim.cmd("nmap <leader>rn <Cmd>lua require('vscode').action('editor.action.rename')<CR>") -- Rename Symbol
@@ -139,9 +155,9 @@ vim.keymap.set({'n', 'v'}, 'ge', ']b', {
     noremap = true,
     silent = true
 
-  })
+})
 
 vim.keymap.del("n", "<C-w>")
-  
+
 -- Pre-enregistrer la macro dans le registre m
 vim.cmd('let @m = "viwP"')
