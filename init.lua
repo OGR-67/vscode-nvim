@@ -37,6 +37,10 @@ require("lazy").setup({
     }
 })
 
+vim.cmd("nmap <leader>rw <Cmd>lua require('vscode').action('workbench.action.reloadWindow')<CR>") -- Reload Window
+
+vim.cmd("nmap <leader>zm <Cmd>lua require('vscode').action('workbench.action.toggleZenMode')<CR>") -- Zen Mode
+
 vim.cmd("nmap <leader>cc :e ~/.config/nvim/init.lua<cr>") -- open init.lua config file
 
 vim.cmd("nmap <leader><leader> <Cmd>lua require('vscode').action('editor.action.formatDocument')<CR>") -- Format Document
