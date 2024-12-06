@@ -115,6 +115,7 @@ end, {
 vim.cmd("nmap <leader>rn <Cmd>lua require('vscode').action('editor.action.rename')<CR>") -- Rename Symbol
 vim.cmd("nmap <leader>rr <Cmd>lua require('vscode').action('editor.action.quickFix')<CR>") -- Refactor List
 vim.cmd("nmap <leader>sw <Cmd>lua require('vscode').action('surround.with')<CR>") -- Surround extension is needed
+vim.cmd("vmap <leader>sw <Cmd>lua require('vscode').action('surround.with')<CR>") -- Surround extension is needed
 
 -- Lines
 vim.cmd("nmap <C-j> <Cmd>lua require('vscode').action('editor.action.moveLinesDownAction')<CR>") -- Move Line Down
